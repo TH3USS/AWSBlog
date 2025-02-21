@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Post>
+
+<h2>Posts Recentes</h2>
+@foreach (var post in Model)
+{
+    <div>
+        <h3>@post.Titulo</h3>
+        <p>@post.Conteudo</p>
+        @if (!string.IsNullOrEmpty(post.ImagemUrl))
+        {
+            <img src="@post.ImagemUrl" alt="Imagem do Post" style="width:300px;">
+        }
+        <small>Publicado em: @post.DataPublicacao</small>
+    </div>
+}
+<a href="/Post/Create">Novo Post</a>
